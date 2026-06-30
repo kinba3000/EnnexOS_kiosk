@@ -16,7 +16,7 @@ func main() {
 	// 1. Installiert die benötigten Browser im Hintergrund, falls sie fehlen
 	log.Println("Prüfe/Installiere Playwright-Browser...")
 	err := playwright.Install(&playwright.RunOptions{
-		Browsers: []string{"firefox"}, // oder "firefox", "webkit"
+		Browsers: []string{"chromium"}, // oder "firefox", "webkit"
 	})
 	if err != nil {
 		log.Fatalf("Fehler beim Installieren der Browser: %v", err)
@@ -40,14 +40,14 @@ func main() {
 	}
 	defer pw.Stop()
 
-	// 3. Firefox im Kiosk-Modus starten
-	fmt.Println("Starte Firefox im Kiosk-Modus...")
-	browser, err := pw.Firefox.Launch(playwright.BrowserTypeLaunchOptions{
+	// 3. Chromium im Kiosk-Modus starten
+	fmt.Println("Starte Chromium im Kiosk-Modus...")
+	browser, err := pw.Chromium.Launch(playwright.BrowserTypeLaunchOptions{
 		Headless: playwright.Bool(false),
 		Args:     []string{"--kiosk"},
 	})
 	if err != nil {
-		log.Fatalf("Fehler beim Starten von Firefox: %v", err)
+		log.Fatalf("Fehler beim Starten von Chromium: %v", err)
 	}
 	defer browser.Close()
 
