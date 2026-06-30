@@ -5,10 +5,11 @@ This application launches a headless Chromium web browser, automatically logs th
 
 ---
 
+
+
 ## 🚀 Setup & Installation
 
---- 
-> For compiling the .go file, you need the go compiler installed. For more informations, reefer to[go.dev] (https://go.dev/)
+> For compiling the .go file, you need the go compiler installed. For more informations, reefer to[go.dev](https://go.dev/)
 
 ### 1. Configuration
 1. Copy the `.env.example` file into the same directory as your executable.
@@ -26,19 +27,21 @@ Run the appropriate command in your terminal to build the executable from the Go
 #### 🖥️ Windows
 ``` go build -o sunny-kiosk.exe ```
 
-## Linux (Raspberry Pi)
+#### Linux 🍓(Raspberry Pi)
 ``` 
 $env:GOOS="linux"
 $env_GOARCH="arm64"
 go build -o sunny-kiosk
 ```
 
+
+
 ## Autostart setup
-### Windows
+#### 🖥️ Windows
 For autostart setup, move your `sunny-kiosk.exe` and your `.env` in the autostart folder of windows.
 Tip: You can open this folder quickly by pressing Win + R, typing shell:startup, and hitting Enter.
 
-### Linux
+#### Linux 🍓(Raspberry Pi)
 1. Move your `sunny-kiosk` and `.env` in your home directory. 
 2. Change rights of the executable: `chmod +x  sunny-kiosk`
 3. Create a Cronjob.
@@ -47,14 +50,17 @@ Tip: You can open this folder quickly by pressing Win + R, typing shell:startup,
 @reboot /home/your-username/sunny-kiosk
 ```
 
-# Usage
+
+### Usage
 Simply double click the `sunny-kiosk.exe` or run it via shell on linux (`./sunny-kiosk`)
 
-# Problems
+
+### Problems
 
 If you encounter any problems or have questions, please open a new issue on the [EnnexOS_Kioks Issues page](https://github.com/kinba3000/EnnexOS_kiosk/issues). 
 
-# Contribution
+
+### Contribution
 
 Contributions are highly welcome!
 
