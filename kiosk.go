@@ -5,6 +5,7 @@ import (
 	"log"
 	"os"
 	"os/signal"
+	"strconv"
 	"syscall"
 	"time"
 
@@ -52,8 +53,17 @@ func main() {
 	defer browser.Close()
 
 	// 4. Kontext und Seite erstellen (Auflösung festlegen)
+	// Default viewport
 	width := 1920
 	height := 1080
+	if os.Getenv("KIOSK_WIDTH") != "" && os.Getenv("KIOSK_HEIGHT") != "" {
+		if w, err := strconv.Atoi(os.Getenv("KIOSK_WIDTH")); err == nil {
+			width = w
+		}
+		if h, err := strconv.Atoi(os.Getenv("KIOSK_HEIGHT")); err == nil {
+			height = h
+		}
+	}
 	context, err := browser.NewContext(playwright.BrowserNewContextOptions{
 		Viewport: &playwright.Size{Width: width, Height: height},
 	})

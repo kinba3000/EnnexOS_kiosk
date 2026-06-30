@@ -15,10 +15,13 @@ This application launches a headless Chromium web browser, automatically logs th
 1. Copy the `.env.example` file into the same directory as your executable.
 2. Rename it to `.env`.
 3. Open the `.env` file and fill in your credentials.
+4. Set the screen width and height for your device.
 ```SUNNY_USER="example@example.com"
 SUNNY_PASS="yourpassword"
 #Replace XXXXXXXX with your actual dashboard ID in the TARGET_URL below.
 TARGET_URL="https://ennexos.sunnyportal.com/xxxxxxxx/dashboard" 
+KIOSK_WIDTH="1920"
+KIOSK_HEIGHT="1080"
 ``` 
 
 ### 2. Building the Executable
